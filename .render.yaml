@@ -1,6 +1,7 @@
 services:
   - type: web
-    name: render-api
+    name: tmg-apis
     env: python
-    buildCommand: ""
-    startCommand: gunicorn app:app
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn app:app --bind 0.0.0.0:8080"
+    plan: free
