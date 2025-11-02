@@ -36,7 +36,7 @@ def ltv_schedule():
 @app.route("/services/time/time/")
 def current_time():
     now = datetime.datetime.now(TZ)
-    time_str = now.strftime("%H:%M")
+    time_str = now.strftime("%H:%M:%S")  # includes seconds
     return jsonify({"time": time_str})
 
 
